@@ -6,7 +6,6 @@ library(lubridate)
 data <- read.table(file = "household_power_consumption.txt",sep = ";",header = TRUE,na.strings = "?", 
                    colClasses =c("factor","factor","numeric","numeric","numeric","numeric","numeric","numeric","numeric"))
 data$Date <- dmy(data$Date)
-data$Time <- hms(data$Time)
 data <- subset(data, Date >= ymd("2007-02-01") & Date <= ymd("2007-02-02"))
 
 ## Construct first plot, which is a histogram of global active power
